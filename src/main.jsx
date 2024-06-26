@@ -10,19 +10,20 @@ import {
 import App from './App.jsx';
 import Home from './Components/Home/Home.jsx';
 import TopicList from './Components/TopicList/TopicList.jsx';
+import Post from './Components/Post/Post.jsx'
 
 const router = createBrowserRouter(
-  createBrowserRouter(
+  createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route index element={<Home />}/>
-      <Route path='/topics'element={<TopicList />}/>
-      <Route path='/post/:id' element={<Post />}/>
+      <Route index element={<Home />} />
+      <Route path="/topics" element={<TopicList />} />
+      <Route path="/post/:id" element={<Post />} />
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );

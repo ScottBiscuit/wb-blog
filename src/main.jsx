@@ -14,12 +14,15 @@ import TopicList from './Components/TopicList/TopicList.jsx';
 const router = createBrowserRouter(
   createBrowserRouter(
     <Route path="/" element={<App />}>
+      <Route index element={<Home />}/>
+      <Route path='/topics'element={<TopicList />}/>
+      <Route path='/post/:id' element={<Post />}/>
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 );
